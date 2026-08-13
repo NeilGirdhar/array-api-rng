@@ -1,0 +1,123 @@
+[build-system]
+requires = ["uv_build>=0.11.3,<0.12"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+  "lefthook>=2",
+  "numpy>=2.2",
+  "pytest>=8.3.4",
+  "ruff>=0.16.1",
+  "toml-sort>=0.24",
+  "ty>=0.0.66",
+  "vulture>=2.14"
+]
+
+[project]
+name = "array-api-rng"
+version = "0.1"
+description = "Random number generation for the Array API standard"
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [{name = "Neil Girdhar", email = "mistersheik@gmail.com"}]
+maintainers = [{name = "Neil Girdhar", email = "mistersheik@gmail.com"}]
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = [
+  "array-api",
+  "jax",
+  "numpy",
+  "pytorch",
+  "random",
+  "rng"
+]
+classifiers = [
+  "Development Status :: 1 - Planning",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Programming Language :: Python",
+  "Typing :: Typed"
+]
+dependencies = ["array-api-compat>=1.15.0"]
+
+[project.urls]
+Documentation = "https://github.com/NeilGirdhar/array-api-rng#readme"
+Issues = "https://github.com/NeilGirdhar/array-api-rng/issues"
+Source = "https://github.com/NeilGirdhar/array-api-rng"
+
+[tool.pytest]
+addopts = ["--disable-warnings"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+preview = true
+select = ["ALL"]
+ignore = [
+  "ambiguous-unicode-character-comment",
+  "ambiguous-unicode-character-docstring",
+  "assert",
+  "blanket-type-ignore",
+  "commented-out-code",
+  "docstring-extraneous-returns",
+  "docstring-missing-exception",
+  "docstring-missing-returns",
+  "docstring-missing-yields",
+  "float-equality-comparison",
+  "line-contains-todo",
+  "logging-f-string",
+  "missing-copyright-notice",
+  "missing-todo-author",
+  "missing-todo-link",
+  "missing-trailing-comma",
+  "no-self-use",
+  "pandas-use-of-dot-at",
+  "parenthesize-chained-operators",
+  "typing-only-first-party-import",
+  "typing-only-standard-library-import",
+  "typing-only-third-party-import",
+  "undocumented-magic-method",
+  "undocumented-public-class",
+  "undocumented-public-function",
+  "undocumented-public-init",
+  "undocumented-public-method",
+  "undocumented-public-module",
+  "unused-class-method-argument",
+  "unused-function-argument",
+  "unused-method-argument",
+  "unused-static-method-argument"
+]
+
+[tool.ruff.lint.flake8-errmsg]
+max-string-length = 40
+
+[tool.ruff.lint.flake8-import-conventions.extend-aliases]
+"datetime" = "dt"
+"itertools" = "it"
+"jax.numpy" = "jnp"
+"jax.random" = "jr"
+"numpy.typing" = "npt"
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.pylint]
+max-args = 8
+max-locals = 25
+
+[tool.uv.build-backend]
+module-root = ""
+
+[tool.vulture]
+ignore_decorators = ["@pytest.fixture"]
+sort_by_size = true

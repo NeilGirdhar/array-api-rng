@@ -1,6 +1,6 @@
 # array-api-rng
 
-Random number generation for the [Array API standard](https://data-apis.org/array-api/latest/).
+Random number generation for the [Python array API standard](https://data-apis.org/array-api/latest/).
 
 ## Motivation
 

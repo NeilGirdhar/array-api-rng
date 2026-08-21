@@ -4,14 +4,14 @@ Random number generation for the [Python array API standard](https://data-apis.o
 
 ## Motivation
 
-The Array API standard has no concept of random number generation, which
+The array API standard has no concept of random number generation, which
 makes it hard to write array-library-agnostic code that needs randomness
 (e.g. statistical libraries, probabilistic models, Monte Carlo methods,
 machine learning). This project grew out of
 [data-apis/array-api-extra#308](https://github.com/data-apis/array-api-extra/issues/308),
 where it became clear that RNG support didn't fit the scope of
 `array-api-extra` (which avoids depending on any specific array library and
-sticks to pure compositions of standard Array API functions). RNG needs
+sticks to pure compositions of standard array API functions). RNG needs
 library-specific handling — NumPy, PyTorch, and JAX all have different
 random-state models — so it's being developed here instead, as its own
 project under the same umbrella of "make backend-independent array code
@@ -51,7 +51,7 @@ based on, and open an issue here to continue the discussion.
 ## Related discussions
 
 - [data-apis/array-api-extra#308](https://github.com/data-apis/array-api-extra/issues/308) — the original proposal and design discussion (now converted to a discussion thread)
-- [data-apis/array-api#431](https://github.com/data-apis/array-api/issues/431) and [data-apis/array-api#874](https://github.com/data-apis/array-api/issues/874) — related discussion in the Array API standard itself
+- [data-apis/array-api#431](https://github.com/data-apis/array-api/issues/431) and [data-apis/array-api#874](https://github.com/data-apis/array-api/issues/874) — related discussion in the array API standard itself
 - [glass-dev/rng-jax](https://github.com/glass-dev/rng-jax) — a proof-of-concept JAX RNG wrapper with a similar stateful design
 
 ## Contributing
